@@ -9,19 +9,19 @@ def show_slices(slices):
        axes[i].imshow(slice.T, cmap="gray", origin="lower")
 
 
-img_nii = nib.load('img/hippocampus_001.nii')
-# img_nii = nib.load('img/BRATS_001.nii.gz')
+# img_nii = nib.load('img/hippocampus_001.nii')
+img_nii = nib.load('img/BRATS_001.nii.gz')
 img = np.array(img_nii.get_fdata())
 
 print(type(img))
 print(img.shape)
 
-slice0 = img[17, :, :]
-slice1 = img[:, 25, :]
-slice2 = img[:, :, 17]
-# slice0 = img[120, :, :, 3]
-# slice1 = img[:, 120, :, 3]
-# slice2 = img[:, :, 77, 3]
+# slice0 = img[17, :, :]
+# slice1 = img[:, 25, :]
+# slice2 = img[:, :, 17]
+slice0 = img[120, :, :, 3]
+slice1 = img[:, 120, :, 3]
+slice2 = img[:, :, 77, 3]
 
 show_slices([slice0, slice1, slice2])
 
